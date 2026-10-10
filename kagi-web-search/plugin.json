@@ -1,0 +1,33 @@
+{
+  "active": true,
+  "hubId": "kagi-web-search",
+  "name": "kagi-web-search",
+  "schema": "skill-1.0.0",
+  "version": "1.0.0",
+  "description": "Search the web using the Kagi Search API and return results",
+  "author": "Stardread",
+  "license": "MIT",
+  "setup_args": {
+    "KAGI_API_KEY": {
+      "type": "string",
+      "required": true,
+      "input": {
+        "type": "text",
+        "default": "",
+        "placeholder": "your Kagi API key",
+        "hint": "API Key from kagi.com/api/keys (no 'Bearer ' prefix)"
+      },
+      "value": ""
+    }
+  },
+  "entrypoint": {
+    "file": "handler.js",
+    "params": {
+      "query": {
+        "description": "The search query to look up on the web",
+        "type": "string"
+      }
+    }
+  },
+  "imported": true
+}
